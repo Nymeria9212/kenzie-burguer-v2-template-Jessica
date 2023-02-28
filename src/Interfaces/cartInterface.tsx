@@ -28,7 +28,7 @@ export interface iProductAddModal {
 }
 export interface iContextCart {
   products: iProduct[] | undefined;
-  cart: iProduct[];
+  cart: iProductCart[];
   setModalCart: React.Dispatch<React.SetStateAction<boolean>>;
   modalCart: boolean;
   addProduct: (product: iProduct) => void;
