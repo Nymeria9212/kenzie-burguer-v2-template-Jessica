@@ -10,7 +10,8 @@ import { CartContext } from '../../Contexts/CartContext';
 import { UserContext } from '../../Contexts/UserContext';
 
 const Header = () => {
-  const { setModalCart } = useContext(CartContext);
+  const { setModalCart, totalItens, searchValue, setSearchValue } =
+    useContext(CartContext);
   const { logout } = useContext(UserContext);
   return (
     <StyledHeader>
@@ -32,6 +33,7 @@ const Header = () => {
               >
                 <MdShoppingCart size={28} />
               </button>
+              <p>{totalItens}</p>
               <button
                 type='button'
                 onClick={() => {

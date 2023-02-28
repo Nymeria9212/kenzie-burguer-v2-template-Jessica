@@ -7,7 +7,7 @@ import { StyledParagraph } from '../../../styles/typography';
 import { CartContext } from '../../../Contexts/CartContext';
 
 const CartProductList = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, cartValue, removeAllCart } = useContext(CartContext);
   return (
     <StyledCartProductList>
       <ul>
@@ -16,6 +16,7 @@ const CartProductList = () => {
             key={produt.id}
             name={produt.name}
             img={produt.img}
+            produt={produt}
           />
         ))}
       </ul>
@@ -24,9 +25,20 @@ const CartProductList = () => {
         <StyledParagraph>
           <strong>Total</strong>
         </StyledParagraph>
-        <StyledParagraph className='total'>R$ 14,00</StyledParagraph>
+        <StyledParagraph className='total'>
+          {cartValue.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          })}
+        </StyledParagraph>
       </div>
-      <StyledButton $buttonSize='default' $buttonStyle='gray'>
+      <StyledButton
+        $buttonSize='default'
+        $buttonStyle='gray'
+        onClick={() => {
+          removeAllCart();
+        }}
+      >
         Remover todos
       </StyledButton>
     </StyledCartProductList>

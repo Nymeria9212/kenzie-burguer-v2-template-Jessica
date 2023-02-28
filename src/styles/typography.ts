@@ -18,7 +18,21 @@ export const StyledTitle = styled(BaseTitle)<IStyledTitleProps>`
   line-height: 1.6;
 
   text-align: ${({ textAlign }) => textAlign};
-
+  .counter {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    button {
+      font-size: 1.5rem;
+      background-color: #bdbdbd;
+      color: #eb5757;
+      font-weight: 700;
+      width: 1.5rem;
+    }
+    span {
+      font-size: 1rem;
+    }
+  }
   ${({ $fontSize }) => {
     switch ($fontSize) {
       case 'one':

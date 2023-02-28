@@ -23,6 +23,23 @@ export const StyledHeader = styled.header`
         justify-content: center;
         gap: 15px;
 
+        p {
+          position: relative;
+          top: -13px;
+          right: 22px;
+          width: 14px;
+          height: 14px;
+          border-radius: 4px;
+          display: flex;
+          align-self: center;
+          background-color: var(--toastify-color-success);
+          color: var(--toastify-text-color-warning);
+          align-items: center;
+          justify-content: center;
+          font-family: Inter;
+          font-size: 10px;
+        }
+
         button {
           background: transparent;
           color: ${({ theme }) => theme.colors.gray150};
