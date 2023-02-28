@@ -11,5 +11,6 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": ["Burguer", "checkpassword", "Confirmar", "Senha"]
 }

@@ -1,10 +1,19 @@
+import { forwardRef, InputHTMLAttributes } from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
+import { iUserCreate } from '../../../Interfaces/userInterface';
 import { StyledTextField } from '../../../styles/form';
 import { StyledParagraph } from '../../../styles/typography';
 
-const Input = () => (
+interface IInputProps {
+  label: string;
+  type: 'text' | 'email' | 'password';
+  error?: string | undefined;
+  register: UseFormRegisterReturn<string>;
+}
+const Input = ({ error, register, label, type }: IInputProps) => (
   <fieldset>
-    <StyledTextField label='Teste' type='text' />
-    <StyledParagraph fontColor='red'>Erro</StyledParagraph>
+    <StyledTextField label={label} type={type} {...register} />
+    {error ? <StyledParagraph fontColor='red'>{error}</StyledParagraph> : null}
   </fieldset>
 );
 
