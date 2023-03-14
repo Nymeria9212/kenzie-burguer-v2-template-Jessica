@@ -34,8 +34,9 @@ export const UserProvider = ({ children }: iContextProps) => {
       localStorage.setItem('@idUser', response.data.user.id);
       setUser(response.data.accessToken);
       navegate('/shop');
+      toast.success('Login feito com sucesso');
     } catch (error) {
-      toast.error(`${error}`);
+      toast.error('Algo deu errado, tente novamente');
     }
   };
 
